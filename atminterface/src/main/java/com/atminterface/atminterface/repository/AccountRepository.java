@@ -3,6 +3,8 @@ package com.atminterface.atminterface.repository;
 import com.atminterface.atminterface.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.math.BigDecimal;
+
 /**
  * Project: ATM Interface
  * Author: Arnold Madamombe
@@ -12,5 +14,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountRepository extends JpaRepository<Account,Long> {
     Account findByAccountNumber(String accountNumber);
-
+    Account transfer(String transferIn, String transferOut, BigDecimal amount);
 }

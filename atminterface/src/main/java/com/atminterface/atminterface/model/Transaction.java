@@ -24,6 +24,7 @@ public class Transaction {
     private UUID id;
     @ManyToOne
     private Account account;
+    private String accountNumber;
     @Column(precision = 20,scale = 2)
     private BigDecimal amount;
     @Column(precision = 20,scale = 2)
@@ -32,4 +33,7 @@ public class Transaction {
     private TransactionType transactionType;
     @UpdateTimestamp
     private LocalDateTime createdAt;
+
+    public void setType(TransactionType transactionType) {
+    }
 }

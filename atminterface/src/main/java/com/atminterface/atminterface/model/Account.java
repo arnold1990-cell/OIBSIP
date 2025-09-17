@@ -34,6 +34,7 @@ public class Account {
     private String accountNumber;
     @Column(precision = 20,scale = 2)
     private BigDecimal balance;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
     @OneToMany
