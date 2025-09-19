@@ -1,7 +1,7 @@
 package com.atminterface.atminterface.mapper;
 
 import com.atminterface.atminterface.dto.UserDto;
-import com.atminterface.atminterface.model.User;
+import com.atminterface.atminterface.model.AppUser;
 
 import java.util.UUID;
 /**
@@ -12,27 +12,27 @@ import java.util.UUID;
  */
 public class UserMapper {
 
-    public static UserDto toDto(User user) {
-        if (user == null) return null;
+    public static UserDto toDto(AppUser appUser) {
+        if (appUser == null) return null;
 
         return new UserDto(
-                user.getId() != null ? user.getId() : UUID.randomUUID(),
-                user.getUser_id(),
-                user.getFullName(),
-                user.getEmail(),
-                AccountMapper.toDtoList(user.getAccounts())
+                appUser.getId() != null ? appUser.getId() : UUID.randomUUID(),
+                appUser.getUserid(),
+                appUser.getFullName(),
+                appUser.getEmail(),
+                AccountMapper.toDtoList(appUser.getAccounts())
         );
     }
 
-    public static User toEntity(UserDto userDto) {
+    public static AppUser toEntity(UserDto userDto) {
         if (userDto == null) return null;
 
-        User user = new User();
-        user.setId(userDto.id());
-        user.setUser_id(userDto.user_id());
-        user.setFullName(userDto.fullName());
-        user.setEmail(userDto.email());
-        user.setAccounts(AccountMapper.toEntityList(userDto.accounts()));
-        return user;
+        AppUser appUser = new AppUser();
+        appUser.setId(userDto.id());
+        appUser.setUserid(userDto.userid());
+        appUser.setFullName(userDto.fullName());
+        appUser.setEmail(userDto.email());
+        appUser.setAccounts(AccountMapper.toEntityList(userDto.accounts()));
+        return appUser;
     }
 }

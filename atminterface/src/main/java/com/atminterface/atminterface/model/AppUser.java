@@ -21,13 +21,13 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
-public class User {
+@Table(name = "app_user")
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(unique = true)
-    private String user_id ;
+    private String userid ;
     @NotBlank(message = "Name cant be blank")
     @Column(length = 250)
     private String fullName;
@@ -40,6 +40,6 @@ public class User {
     private String email;
     @CreationTimestamp
     private LocalDateTime createdAt;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "appUser")
     private List<Account> accounts;
 }

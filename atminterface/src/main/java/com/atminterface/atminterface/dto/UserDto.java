@@ -11,7 +11,7 @@ import java.util.UUID;
  */
 public record UserDto(
         UUID id,
-        String user_id,
+        String userid,
         String fullName,
         String email,
         List<AccountDto> accounts)

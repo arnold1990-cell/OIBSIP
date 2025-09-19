@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Project: ATM Interface
@@ -83,7 +84,7 @@ public class AccountService {
         return updatedAccount;
     }
 
-    public  void transfer(String fromAccountNumber, String toAccountNumber, BigDecimal amount) throws AccountNotFoundException, InsufficientBalanceException {
+    public Optional<Account> transfer(String fromAccountNumber, String toAccountNumber, BigDecimal amount) throws AccountNotFoundException, InsufficientBalanceException {
 
         Account fromAccount = findByAccountNumber(fromAccountNumber);
         Account toAccount = findByAccountNumber(toAccountNumber);
@@ -107,6 +108,7 @@ public class AccountService {
         inTransaction.setAmount(amount);
         inTransaction.setType(TransactionType.TRANSFER_IN);
         transactionRepository.save(inTransaction);
+        return null;
     }
 }
 

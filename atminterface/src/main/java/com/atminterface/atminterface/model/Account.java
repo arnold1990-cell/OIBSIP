@@ -27,7 +27,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @ManyToOne
-    private User user;
+    private AppUser appUser;
     @Column(unique = true)
     @NotBlank(message = "Account cant be blank")
     @Size(min = 10, max = 10)
