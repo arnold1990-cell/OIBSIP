@@ -27,19 +27,21 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(unique = true)
-    private String userid ;
+    private String userid;
     @NotBlank(message = "Name cant be blank")
     @Column(length = 250)
     private String fullName;
-    @NotBlank(message = "Enter your PIN")
-    @Column(unique = true)
-    @Size(min = 4,max = 4)
-    private String pin;
+    @NotBlank(message = "Password cant be blank")
+    @Column(nullable = false)
+    @Size(min = 6, max = 8)
+    private String password;
     @NotBlank(message = "Email cant be blank")
-    @Column(unique = true,length = 100)
+    @Column(unique = true, length = 100)
     private String email;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @OneToMany(mappedBy = "appUser")
     private List<Account> accounts;
+
+
 }

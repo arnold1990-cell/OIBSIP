@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Date: 15-Sep-2025
  * Description: Repository interface for User entity, providing database access methods
  */
-public interface UserRepository extends JpaRepository<AppUser,Long> {
-    AppUser findByEmail(String email);
+public interface AppUserRepository extends JpaRepository<AppUser,Long> {
+     AppUser findByEmail(String email);
     AppUser findByFullName(String fullName);
     AppUser findByUserid(String userid );
 
