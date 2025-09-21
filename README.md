@@ -1,7 +1,7 @@
 ATM Interface
 Description
 
-A Java-based ATM Interface developed as part of an Oasis Inforbyte internship task. It allows users to register, login, check balances, deposit, withdraw, transfer funds, and view transaction history. The project features secure authentication, exception handling, and file/database storage for efficient banking operations.
+A Java-based ATM Interface developed as part of an Oasis Inforbyte internship task 3. It allows users to register, login, check balances, deposit, withdraw, transfer funds, and view transaction history. The project features secure authentication, exception handling, and file/database storage for efficient banking operations.
 
 Features
 
